@@ -598,6 +598,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: vuforia-test-image-ar
       objectReference: {fileID: 0}
+    - target: {fileID: 3868494384688408993, guid: 32495728719782647aa3d9b233fecfb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
         type: 3}
       propertyPath: m_LocalPosition.x
