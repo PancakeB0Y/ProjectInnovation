@@ -4,12 +4,26 @@ using Unity.Burst.CompilerServices;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class TouchControls : MonoBehaviour
+public class TouchControlsCylinder : MonoBehaviour
 {
     [SerializeField] LayerMask bulletLayer;
     [SerializeField] LayerMask backgroundLayer;
+    [SerializeField] LayerMask chamberLayer;
 
     BulletController selectedBullet;
+
+    private void Start()
+    {
+        Screen.autorotateToPortrait = true;
+
+        Screen.autorotateToPortraitUpsideDown = true;
+
+        Screen.autorotateToLandscapeLeft = false;
+
+        Screen.autorotateToLandscapeRight = false;
+
+        Screen.orientation = ScreenOrientation.AutoRotation;
+    }
 
     private void Update()
     {
@@ -47,7 +61,15 @@ public class TouchControls : MonoBehaviour
                 }
             }
             else if (touch.phase == TouchPhase.Ended) {
-                DeselectBullet();
+                if (PlaceBulletInChamber())
+                {
+                    selectedBullet = null;
+                }
+                else
+                {
+                    DropBullet();
+                }
+                
             }
         }
 
@@ -99,9 +121,27 @@ public class TouchControls : MonoBehaviour
         selectedBullet.HoldBullet();
     }
 
-    void DeselectBullet()
+    void DropBullet()
     {
         selectedBullet.DropBullet();
         selectedBullet = null;
+    }
+
+    bool PlaceBulletInChamber()
+    {
+        if (selectedBullet == null)
+        {
+            return false;
+        }
+
+        Collider[] hitColliders = Physics.OverlapSphere(selectedBullet.transform.position, 0.5f, chamberLayer);
+
+        if (hitColliders.Length > 0)
+        {
+            selectedBullet.transform.position = hitColliders[0].transform.position;
+            return true;
+        }
+
+        return false;
     }
 }
