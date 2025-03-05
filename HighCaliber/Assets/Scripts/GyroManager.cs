@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gyro : MonoBehaviour
+public class GyroManager : MonoBehaviour
 {
-    [SerializeField] float rotSpeed = 0.5f;
-    Vector3 rot;
-
     DeviceOrientation previousDeviceOrientation;
 
-    bool isShooting = false;
-    bool isRotating = false;
+    public static System.Action onShoot;
+    public static System.Action onSpin;
 
     void Start()
     {
-        rot = Vector3.zero;
         Input.gyro.enabled = true;
 
         previousDeviceOrientation = Input.deviceOrientation;
@@ -22,23 +18,20 @@ public class Gyro : MonoBehaviour
 
     void Update()
     {
-        rot.y = -Input.gyro.rotationRateUnbiased.z * rotSpeed;
-        transform.Rotate(rot);   
-
         //Track shooting motion
-        if (Input.deviceOrientation == DeviceOrientation.Portrait && (previousDeviceOrientation == DeviceOrientation.LandscapeLeft || previousDeviceOrientation == DeviceOrientation.LandscapeRight) && !isShooting)
+        if ((Input.deviceOrientation == DeviceOrientation.Portrait || Input.deviceOrientation == DeviceOrientation.PortraitUpsideDown) && (previousDeviceOrientation == DeviceOrientation.LandscapeLeft || previousDeviceOrientation == DeviceOrientation.LandscapeRight))
         {
             Debug.Log("BANG!!");
-            isShooting = true;
+            onShoot?.Invoke();
         }
 
         //Track spinning motion
-        if(Input.deviceOrientation == DeviceOrientation.FaceUp && !isRotating)
+        if(Input.deviceOrientation == DeviceOrientation.FaceUp)
         {
             if(Input.gyro.rotationRateUnbiased.z > 3 || Input.gyro.rotationRateUnbiased.z < -3)
             {
                 Debug.Log("SPIN");
-                isRotating = true;
+                onSpin?.Invoke();
             }
         }
 
