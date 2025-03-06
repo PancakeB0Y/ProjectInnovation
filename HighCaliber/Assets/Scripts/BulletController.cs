@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -12,6 +9,8 @@ public class BulletController : MonoBehaviour
 
     Vector3 startScale;
     Vector3 holdScale;
+
+    BulletState state = BulletState.Default;
 
     void Start()
     {
@@ -26,6 +25,8 @@ public class BulletController : MonoBehaviour
 
     public void DropBullet()
     {
+        state = BulletState.Default;
+
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(startRotation);
 
@@ -34,7 +35,26 @@ public class BulletController : MonoBehaviour
 
     public void HoldBullet()
     {
+        state = BulletState.Holding;
+
         transform.rotation = Quaternion.Euler(holdRotation);
         transform.localScale = holdScale;
     }
+
+    public void LoadBullet()
+    {
+        state = BulletState.Loaded;
+    }
+
+    public bool IsLoaded()
+    {
+        if (state == BulletState.Loaded)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
+
+public enum BulletState{ Default, Holding, Loaded }
