@@ -1,0 +1,2 @@
+c6daebf8-f511-47b1-85fb-ab5fff6b5ae2
+Gains 2 bonus ammo when shooting a player that has shot you in the previous round 
