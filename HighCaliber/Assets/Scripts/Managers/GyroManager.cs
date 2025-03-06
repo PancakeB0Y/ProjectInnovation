@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GyroManager : MonoBehaviour
@@ -19,7 +17,7 @@ public class GyroManager : MonoBehaviour
     void Update()
     {
         //Track shooting motion
-        if ((Input.deviceOrientation == DeviceOrientation.Portrait || Input.deviceOrientation == DeviceOrientation.PortraitUpsideDown) && (previousDeviceOrientation == DeviceOrientation.LandscapeLeft || previousDeviceOrientation == DeviceOrientation.LandscapeRight))
+        if ((Input.deviceOrientation == DeviceOrientation.Portrait) && (previousDeviceOrientation == DeviceOrientation.LandscapeRight))
         {
             Debug.Log("BANG!!");
             onShoot?.Invoke();

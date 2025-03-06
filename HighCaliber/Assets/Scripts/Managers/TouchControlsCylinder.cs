@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TouchControlsCylinder : MonoBehaviour
 {
@@ -12,17 +9,14 @@ public class TouchControlsCylinder : MonoBehaviour
 
     BulletController selectedBullet;
 
-    private void Start()
+    private void OnEnable()
     {
-        Screen.autorotateToPortrait = true;
+        GyroManager.onSpin += ChangeScene;
+    }
 
-        Screen.autorotateToPortraitUpsideDown = true;
-
-        Screen.autorotateToLandscapeLeft = false;
-
-        Screen.autorotateToLandscapeRight = false;
-
-        Screen.orientation = ScreenOrientation.AutoRotation;
+    private void OnDisable()
+    {
+        GyroManager.onSpin -= ChangeScene;
     }
 
     private void Update()
@@ -117,12 +111,29 @@ public class TouchControlsCylinder : MonoBehaviour
 
     void SelectBullet(BulletController bulletController)
     {
+        if (bulletController == null)
+        {
+            return;
+        }
+
         selectedBullet = bulletController;
+
+        //Check if the selected bullet was loaded in a chamber
+        if (selectedBullet.IsLoaded())
+        {
+            GameManager.instance.DecreaseBulletCount(1);
+        }
+
         selectedBullet.HoldBullet();
     }
 
     void DropBullet()
     {
+        if(selectedBullet == null)
+        {
+            return;
+        }
+
         selectedBullet.DropBullet();
         selectedBullet = null;
     }
@@ -139,9 +150,26 @@ public class TouchControlsCylinder : MonoBehaviour
         if (hitColliders.Length > 0)
         {
             selectedBullet.transform.position = hitColliders[0].transform.position;
+
+            //sets the bullet state
+            selectedBullet.LoadBullet();
+
+            //increases the loaded bullet count
+            GameManager.instance.IncreaseBulletCount(1);
             return true;
         }
 
         return false;
+    }
+
+    void ChangeScene()
+    {
+        if(GameManager.instance.loadedBulletsCount == 0)
+        {
+            return;
+        }
+
+        selectedBullet = null;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
