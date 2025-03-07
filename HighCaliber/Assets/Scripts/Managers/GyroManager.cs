@@ -17,7 +17,7 @@ public class GyroManager : MonoBehaviour
     void Update()
     {
         //Track shooting motion
-        if ((Input.deviceOrientation == DeviceOrientation.Portrait) && (previousDeviceOrientation == DeviceOrientation.LandscapeRight))
+        if ((Input.deviceOrientation == DeviceOrientation.Portrait) && (previousDeviceOrientation == DeviceOrientation.LandscapeRight || previousDeviceOrientation == DeviceOrientation.LandscapeRight))
         {
             Debug.Log("BANG!!");
             onShoot?.Invoke();
