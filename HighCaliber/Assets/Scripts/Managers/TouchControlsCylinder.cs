@@ -1,7 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using UnityEngine.UI;
 
 public class TouchControlsCylinder : MonoBehaviour
 {
