@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UI;
 
 public class TouchControlsCylinder : MonoBehaviour
 {
@@ -145,10 +147,19 @@ public class TouchControlsCylinder : MonoBehaviour
             return false;
         }
 
-        Collider[] hitColliders = Physics.OverlapSphere(selectedBullet.transform.position, 0.5f, chamberLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(selectedBullet.transform.position, 0.5f, chamberLayer, QueryTriggerInteraction.Ignore);
 
         if (hitColliders.Length > 0)
         {
+            for (int i = 0; i < hitColliders.Length; i++)
+            {
+                if ((bulletLayer & (1 << hitColliders[i].gameObject.layer)) != 0)
+                {
+                    return false;
+                }
+            }
+
+
             selectedBullet.transform.position = hitColliders[0].transform.position;
 
             //sets the bullet state
@@ -170,6 +181,6 @@ public class TouchControlsCylinder : MonoBehaviour
         }
 
         selectedBullet = null;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.instance.GoToNextScene();
     }
 }

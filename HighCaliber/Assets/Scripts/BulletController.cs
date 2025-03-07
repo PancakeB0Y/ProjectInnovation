@@ -12,6 +12,8 @@ public class BulletController : MonoBehaviour
 
     BulletState state = BulletState.Default;
 
+    Collider bulletCollider;
+
     void Start()
     {
         startPosition = transform.position;
@@ -21,6 +23,8 @@ public class BulletController : MonoBehaviour
 
         startScale = transform.localScale;
         holdScale = new Vector3(14.5f, 14.5f, 24.5f);
+
+        bulletCollider = GetComponent<Collider>();
     }
 
     public void DropBullet()
@@ -30,7 +34,12 @@ public class BulletController : MonoBehaviour
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(startRotation);
 
-        transform.localScale = startScale;    
+        transform.localScale = startScale;
+
+        if (bulletCollider != null)
+        {
+            bulletCollider.isTrigger = false;
+        }
     }
 
     public void HoldBullet()
@@ -39,11 +48,21 @@ public class BulletController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(holdRotation);
         transform.localScale = holdScale;
+
+        if (bulletCollider != null)
+        {
+            bulletCollider.isTrigger = true;
+        }
     }
 
     public void LoadBullet()
     {
         state = BulletState.Loaded;
+
+        if (bulletCollider != null)
+        {
+            bulletCollider.isTrigger = false;
+        }
     }
 
     public bool IsLoaded()

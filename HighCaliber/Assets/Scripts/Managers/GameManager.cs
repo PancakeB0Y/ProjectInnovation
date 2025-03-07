@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,5 +36,22 @@ public class GameManager : MonoBehaviour
     public void LoseAllBullets()
     {
         loadedBulletsCount = 0;
+    }
+
+    public void GoToNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void GoToPreviousScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex > 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        else
+        {
+            Debug.Log("You are in the first scene");
+        }
     }
 }
