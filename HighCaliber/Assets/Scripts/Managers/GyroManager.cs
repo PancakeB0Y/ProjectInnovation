@@ -17,16 +17,19 @@ public class GyroManager : MonoBehaviour
     void Update()
     {
         //Track shooting motion
-        if ((Input.deviceOrientation == DeviceOrientation.Portrait) && (previousDeviceOrientation == DeviceOrientation.LandscapeRight))
+        if (Input.deviceOrientation == DeviceOrientation.LandscapeRight || Input.deviceOrientation == DeviceOrientation.LandscapeRight || Input.deviceOrientation == DeviceOrientation.Portrait || previousDeviceOrientation == DeviceOrientation.LandscapeRight || previousDeviceOrientation == DeviceOrientation.LandscapeRight)
         {
-            Debug.Log("BANG!!");
-            onShoot?.Invoke();
+            if (Input.gyro.rotationRateUnbiased.z > 5 || Input.gyro.rotationRateUnbiased.z < -5)
+            {
+                Debug.Log("BANG!!");
+                //onShoot?.Invoke();
+            }
         }
 
         //Track spinning motion
-        if(Input.deviceOrientation == DeviceOrientation.FaceUp)
+        if (Input.deviceOrientation == DeviceOrientation.FaceUp)
         {
-            if(Input.gyro.rotationRateUnbiased.z > 3 || Input.gyro.rotationRateUnbiased.z < -3)
+            if(Input.gyro.rotationRateUnbiased.z > 4 || Input.gyro.rotationRateUnbiased.z < -4)
             {
                 Debug.Log("SPIN");
                 onSpin?.Invoke();

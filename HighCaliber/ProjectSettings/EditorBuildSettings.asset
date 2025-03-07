@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CylinderScene.unity
-    guid: 3ec93192be00c564d872a790d34134f3
-  - enabled: 1
-    path: Assets/Scenes/RevolverScene.unity
-    guid: e0ab92d0be59922418cdc49cf4559453
-  - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 8d7df85921be19e48882c399711005ea
   - enabled: 1
     path: Assets/Scenes/ARScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/CylinderScene.unity
+    guid: 3ec93192be00c564d872a790d34134f3
+  - enabled: 1
+    path: Assets/Scenes/RevolverScene.unity
+    guid: e0ab92d0be59922418cdc49cf4559453
   m_configObjects: {}
