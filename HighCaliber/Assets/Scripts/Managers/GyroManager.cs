@@ -22,7 +22,7 @@ public class GyroManager : MonoBehaviour
             if (Input.gyro.rotationRateUnbiased.z > 5 || Input.gyro.rotationRateUnbiased.z < -5)
             {
                 Debug.Log("BANG!!");
-                //onShoot?.Invoke();
+                onShoot?.Invoke();
             }
         }
 
