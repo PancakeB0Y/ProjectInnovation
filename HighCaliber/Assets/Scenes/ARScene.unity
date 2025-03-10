@@ -344,6 +344,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1389059132}
+    - targetCorrespondingSourceObject: {fileID: 4321834677307577169, guid: c6790894d1d376344b5d4860f9393e4a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1389059133}
   m_SourcePrefab: {fileID: 100100000, guid: c6790894d1d376344b5d4860f9393e4a, type: 3}
 --- !u!1001 &151896425
 PrefabInstance:
@@ -450,6 +454,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2071440115}
+    - targetCorrespondingSourceObject: {fileID: 6645469027888967816, guid: e0e95178487b9e245ae9629987e8a66d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071440116}
   m_SourcePrefab: {fileID: 100100000, guid: e0e95178487b9e245ae9629987e8a66d, type: 3}
 --- !u!1 &410087039
 GameObject:
@@ -864,6 +872,25 @@ MonoBehaviour:
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
 --- !u!114 &1389059132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389059122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1389059125}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: char-2-target
+  mDatasetName: Vuforia/CharCardExample.xml
+  mCastedBehaviour: {fileID: 1389059125}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1389059133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1515,11 +1542,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1296405140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 986.6387, y: 543.9645}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2070827625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,6 +1720,25 @@ MonoBehaviour:
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
 --- !u!114 &2071440115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071440105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2071440108}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: char-1-target
+  mDatasetName: Vuforia/CharCardExample.xml
+  mCastedBehaviour: {fileID: 2071440108}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &2071440116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
