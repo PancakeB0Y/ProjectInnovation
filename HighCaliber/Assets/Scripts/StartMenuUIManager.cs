@@ -24,7 +24,7 @@ public class StartMenuUIManager : MonoBehaviour
 
     public void StartNewGame()
     {
-        //OnNewGameStarted?.Invoke();
+        OnNewGameStarted?.Invoke();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

@@ -36,7 +36,7 @@ public class FileReadWriteManager : MonoBehaviour
 
     void Start()
     {
-        dataFilePath = Path.Combine(Application.dataPath, "data.txt");
+        dataFilePath = Path.Combine(Application.persistentDataPath, "data.txt");
     }
 
     /// <summary>
