@@ -7,13 +7,24 @@ using UnityEngine;
 /// </summary>
 public class SelectedCharacterData
 {
-    public string Id;
-    public string ability;
+    public string Id => id;
+    public string Ability => ability;
+    public string CylinderId => cylinderId;
+    public string RevolverId => revolverId;
 
-    public SelectedCharacterData(string Id, string ability)
+    private string id;
+    private string ability;
+
+    private string cylinderId;
+    private string revolverId;
+
+    public SelectedCharacterData(string id, string ability, string cylinderId, string revolverId)
     {
-        this.Id = Id;
+        this.id = id;
         this.ability = ability;
+
+        this.cylinderId = cylinderId;
+        this.revolverId = revolverId;
     }
 }
 
@@ -33,6 +44,10 @@ public class CharacterSelectorManager : MonoBehaviour
     /// </summary>
     public static event Action<SelectedCharacterData> OnSelectedCharacter;
     /// <summary>
+    /// When a character is registered - go to CylinderScene
+    /// </summary>
+    public static event Action OnCharacterRegistered;
+    /// <summary>
     /// When an image target is found (scanned) - display character UI
     /// </summary>
     public static event Action<string> OnTargetScanned;
@@ -45,7 +60,15 @@ public class CharacterSelectorManager : MonoBehaviour
     /// <summary>
     /// Holds the chosen character data throughout the whole game lifecycle
     /// </summary>
-    SelectedCharacterData selectedCharacter = null;
+    public static SelectedCharacterData selectedCharacter = null;
+
+    [Header("Revolvers")]
+    [SerializeField]
+    private GameObject revolver5;
+    [SerializeField]
+    private GameObject revolver6;
+    [SerializeField]
+    private GameObject revolver7;
 
     void Awake()
     {
@@ -60,7 +83,7 @@ public class CharacterSelectorManager : MonoBehaviour
             return; // just to be sure
         }
 
-        StartMenuUIManager.OnContinueGame += RegisterCharData;
+        StartMenuUIManager.OnContinueGame += RegisterCharDataOnContinueGame;
 
         ImageTargetController.OnTargetFound += CheckForTargetFound;
         ImageTargetController.OnTargetLost += TargetLost;
@@ -70,33 +93,37 @@ public class CharacterSelectorManager : MonoBehaviour
     /// Load characted data from data file
     /// </summary>
     /// <param name="charData">Text data from file</param>
-    void RegisterCharData(string charData)
+    void RegisterCharDataOnContinueGame(string charData)
     {
         using (StringReader reader = new StringReader(charData))
         {
             string charGUID = reader.ReadLine();
             string charAbility = reader.ReadLine();
+            string charCylinderId = reader.ReadLine();
+            string charRevolverId = reader.ReadLine();
 
-            selectedCharacter = new SelectedCharacterData(charGUID, charAbility);
+            selectedCharacter = new SelectedCharacterData(charGUID, charAbility, charCylinderId, charRevolverId);
         }
+
+        OnCharacterRegistered?.Invoke();
     }
 
     /// <summary>
     /// Called when image target is found (scanned)
     /// </summary>
-    public void CheckForTargetFound(string charId, string charAbility)
+    public void CheckForTargetFound(string charId, string charAbility, string charCylinderId, string charRevolverId)
     {
         if (selectedCharacter == null) // Assign a target
         {
             // Assign to selected character
-            selectedCharacter = new SelectedCharacterData(charId, charAbility);
+            selectedCharacter = new SelectedCharacterData(charId, charAbility, charCylinderId, charRevolverId);
 
             // Write to a text file
             OnSelectedCharacter?.Invoke(selectedCharacter);
         }
 
         if (charId == selectedCharacter.Id) // Only show the ability
-            OnTargetScanned?.Invoke(selectedCharacter.ability);
+            OnTargetScanned?.Invoke(selectedCharacter.Ability);
     }
 
     /// <summary>
@@ -109,7 +136,7 @@ public class CharacterSelectorManager : MonoBehaviour
 
     void OnDestroy()
     {
-        StartMenuUIManager.OnContinueGame -= RegisterCharData;
+        StartMenuUIManager.OnContinueGame -= RegisterCharDataOnContinueGame;
 
         ImageTargetController.OnTargetFound -= CheckForTargetFound;
         ImageTargetController.OnTargetLost -= TargetLost;

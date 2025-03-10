@@ -196,6 +196,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 154783969}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &277459830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277459831}
+  - component: {fileID: 277459832}
+  m_Layer: 0
+  m_Name: CylinderSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277459831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277459830}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277459832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277459830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b41adfac8c85d4ca8be4c678c87ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cylinderIds:
+  - {fileID: 7122057628448920609, guid: 6bca2537bf17a7b4f9d7a7bf5430e80f, type: 3}
+  - {fileID: 336893743248830020, guid: ba6f18010ea41f944beb8072c12983ad, type: 3}
+  - {fileID: -1675423811520811536, guid: 55e2a2b588db5af419ac80747ac1fcb4, type: 3}
 --- !u!1001 &278428951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1582,6 +1630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder5
       objectReference: {fileID: 0}
+    - target: {fileID: 2330106850451782679, guid: 203caa1507de87b448e80225d4a0e084,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6476724866731967545, guid: 203caa1507de87b448e80225d4a0e084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2101,3 +2154,4 @@ SceneRoots:
   - {fileID: 705133435656018714}
   - {fileID: 7732093139399676883}
   - {fileID: 3193935343384249060}
+  - {fileID: 277459831}

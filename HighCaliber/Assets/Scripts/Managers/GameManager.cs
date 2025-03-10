@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+
+        StartMenuUIManager.OnNewGameStarted += GoToNextScene;
+
+        CharacterScanUIManager.OnGoToCylinderScene += GoToCylinderScene;
+        CharacterSelectorManager.OnCharacterRegistered += GoToCylinderScene;
     }
 
     public void IncreaseBulletCount(int bulletCount)
@@ -36,6 +41,16 @@ public class GameManager : MonoBehaviour
         loadedBulletsCount = 0;
     }
 
+    public void GoToCylinderScene()
+    {
+        GoToScene("CylinderScene");
+    }
+
+    public void GoToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void GoToNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -51,5 +66,12 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You are in the first scene");
         }
+    }
+
+    void OnDestroy()
+    {
+        StartMenuUIManager.OnNewGameStarted -= GoToNextScene;
+
+        CharacterScanUIManager.OnGoToCylinderScene += GoToCylinderScene;
     }
 }

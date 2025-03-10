@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 9056333327348631991}
   - component: {fileID: 5729378063335596422}
   - component: {fileID: 3483136758270581217}
+  - component: {fileID: 6461232537492690432}
   m_Layer: 0
   m_Name: RevolverModel6
   m_TagString: Untagged
@@ -172,6 +173,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6461232537492690432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347198430565421578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916db873b04340440aecfcaa8a540341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guid: 08abfad4-fc42-4b19-a95a-7f0dfced4fc2
 --- !u!1 &413981123631535107
 GameObject:
   m_ObjectHideFlags: 0
