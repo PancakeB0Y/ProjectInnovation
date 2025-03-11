@@ -16,6 +16,9 @@ public class RevolverController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
+        isShooting = true;
+        StartCoroutine(InitialShootDelay());
     }
 
     private void OnEnable()
@@ -39,6 +42,13 @@ public class RevolverController : MonoBehaviour
         {
             StartCoroutine(ShootCoroutine());
         }
+    }
+    
+    IEnumerator InitialShootDelay()
+    {
+        yield return new WaitForSeconds(0.25f);
+
+        isShooting = false;
     }
 
     IEnumerator ShootCoroutine()
