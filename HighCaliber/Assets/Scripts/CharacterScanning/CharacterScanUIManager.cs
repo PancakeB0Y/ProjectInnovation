@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterScanUIManager : MonoBehaviour
 {
     public static CharacterScanUIManager Instance => instance;
     static CharacterScanUIManager instance;
+
+    public static event Action OnGoToCylinderScene;
 
     [SerializeField]
     RectTransform abilityTextCont;
@@ -32,6 +35,11 @@ public class CharacterScanUIManager : MonoBehaviour
     void Start()
     {
         abilityTextField = abilityTextCont.GetChild(0).GetComponent<TextMeshProUGUI>();
+    }
+
+    public void GoToCylinderScene()
+    {
+        OnGoToCylinderScene?.Invoke();
     }
 
     void DisplayAbilityCont(string abilityText)

@@ -25,8 +25,6 @@ public class StartMenuUIManager : MonoBehaviour
     public void StartNewGame()
     {
         OnNewGameStarted?.Invoke();
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ContinueGame()
@@ -40,9 +38,6 @@ public class StartMenuUIManager : MonoBehaviour
         else
         {
             OnContinueGame?.Invoke(fileContent);
-
-            // TODO: Change to bullets scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }
     }
 }

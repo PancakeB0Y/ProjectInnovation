@@ -37,6 +37,7 @@ public class FileReadWriteManager : MonoBehaviour
     void Start()
     {
         dataFilePath = Path.Combine(Application.persistentDataPath, "data.txt");
+        Debug.Log(dataFilePath);
     }
 
     /// <summary>
@@ -80,7 +81,9 @@ public class FileReadWriteManager : MonoBehaviour
         using (StreamWriter sw = new StreamWriter(dataFilePath, false)) // 'false' overwrites
         {
             sw.WriteLine(data.Id);
-            sw.WriteLine(data.ability);
+            sw.WriteLine(data.Ability);
+            sw.WriteLine(data.CylinderId);
+            sw.WriteLine(data.RevolverId);
         }
     }
 
