@@ -14,6 +14,8 @@ public class BulletController : MonoBehaviour
 
     Collider bulletCollider;
 
+    Transform startParent;
+
     void Start()
     {
         startPosition = transform.position;
@@ -25,16 +27,20 @@ public class BulletController : MonoBehaviour
         holdScale = new Vector3(20f, 20f, 20f);
 
         bulletCollider = GetComponent<Collider>();
+
+        startParent = transform.parent;
     }
 
     public void DropBullet()
     {
         state = BulletState.Default;
 
+        transform.SetParent(startParent);
         transform.position = startPosition;
         transform.rotation = Quaternion.Euler(startRotation);
 
         transform.localScale = startScale;
+
 
         if (bulletCollider != null)
         {
@@ -46,6 +52,7 @@ public class BulletController : MonoBehaviour
     {
         state = BulletState.Holding;
 
+        transform.SetParent(startParent);
         transform.rotation = Quaternion.Euler(holdRotation);
         transform.localScale = holdScale;
 
@@ -55,9 +62,10 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    public void LoadBullet()
+    public void LoadBullet(Transform parent)
     {
         state = BulletState.Loaded;
+        transform.SetParent(parent);
 
         if (bulletCollider != null)
         {
