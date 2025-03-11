@@ -5,8 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
-    public int loadedBulletsCount { get; private set; } = 0; 
-    public int chamberCount { get; private set; } = 6;
+    public int loadedBulletsCount = 0; 
+    public int chamberCount = 6;
 
     private void Awake()
     {

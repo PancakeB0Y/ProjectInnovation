@@ -74,6 +74,8 @@ public class RevolverController : MonoBehaviour
 
     bool CalculateShot()
     {
+        Debug.Log("bullets count: " + GameManager.instance.loadedBulletsCount + " Chamber count: " + GameManager.instance.chamberCount);
+
         int randomChamber = r.Next(GameManager.instance.chamberCount);
 
         if(randomChamber < GameManager.instance.loadedBulletsCount) {
