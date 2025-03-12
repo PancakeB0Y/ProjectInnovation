@@ -1,79 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4659547218519190413
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2227694610373923615}
-    m_Modifications:
-    - target: {fileID: 3868494384688408993, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_Name
-      value: Lynx-ar
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 32495728719782647aa3d9b233fecfb0, type: 3}
---- !u!4 &1732826726618474571 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4659547218519190413}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7476907091035988953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,17 +11,17 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: Id
-      value: 170689ac-e00a-40c3-a52c-a784598dea36
+      value: bc06a3f6-e2e1-45eb-b80c-018e82ce2d21
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: Name
-      value: Lynx
+      value: Badger
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: revolverGUID
-      value: d2342eb2-faa4-41d1-b43e-b2217d2bb448
+      value: 64cafd36-ad54-4cd3-98fd-e2d0ea23ef8f
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -106,7 +32,7 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: cyllinderGUID
-      value: 88a729e9-5ca6-45d2-aee0-19214d7578c3
+      value: 180259fa-5ea5-43e9-bacd-6c5fe4462aba
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -117,7 +43,7 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: backgroundGUID
-      value: c28fe7a4-0fc0-4363-9c72-68fc7fb2318b
+      value: 3d696692-d746-47ae-8b08-39a1d0134e84
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -127,22 +53,23 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: possibleAbilities.Array.data[0]
-      value: Steal 1 bullet from another player (costs 4 coins, takes a turn).
+      value: After losing the 1st life token, can take 2 actions per turn.
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: possibleAbilities.Array.data[1]
-      value: Steal 2 coins from another player (takes a turn).
+      value: Gains 2 bonus bullets when shooting a player who attempted to shoot
+        you in the previous round.
       objectReference: {fileID: 0}
     - target: {fileID: 6115182364814712604, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: mTargetName
-      value: lynx-target
+      value: gemini-target
       objectReference: {fileID: 0}
     - target: {fileID: 6645469027888967816, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: m_Name
-      value: LynxImageTarget
+      value: BadgerImageTarget
       objectReference: {fileID: 0}
     - target: {fileID: 7176304615576378636, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -157,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 7176304615576378636, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: mTrackableName
-      value: lynx-target
+      value: badger-target
       objectReference: {fileID: 0}
     - target: {fileID: 8730530326917378246, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -216,7 +143,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8730530326917378246, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1732826726618474571}
+      addedObject: {fileID: 2602049683140233404}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e95178487b9e245ae9629987e8a66d, type: 3}
 --- !u!4 &2227694610373923615 stripped
@@ -224,4 +151,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8730530326917378246, guid: e0e95178487b9e245ae9629987e8a66d,
     type: 3}
   m_PrefabInstance: {fileID: 7476907091035988953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9136490561403678657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2227694610373923615}
+    m_Modifications:
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811000106636006621, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Badger-ar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811000106636006621, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21bc1e46e046ee04bafd71362b29c3d6, type: 3}
+--- !u!4 &2602049683140233404 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 9136490561403678657}
   m_PrefabAsset: {fileID: 0}

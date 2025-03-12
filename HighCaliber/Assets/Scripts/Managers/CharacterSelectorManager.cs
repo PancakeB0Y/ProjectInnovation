@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -59,7 +60,7 @@ public class CharacterSelectorManager : MonoBehaviour
     /// <summary>
     /// When an image target is found (scanned) - display character UI
     /// </summary>
-    public static event Action<string> OnTargetScanned;
+    public static event Action<string, List<string>> OnTargetScanned;
 
     /// <summary>
     /// When an image target is lost - hide character UI
@@ -70,14 +71,6 @@ public class CharacterSelectorManager : MonoBehaviour
     /// Holds the chosen character data throughout the whole game lifecycle
     /// </summary>
     public static SelectedCharacterData selectedCharacter = null;
-
-    [Header("Revolvers")]
-    [SerializeField]
-    private GameObject revolver5;
-    [SerializeField]
-    private GameObject revolver6;
-    [SerializeField]
-    private GameObject revolver7;
 
     void Awake()
     {
@@ -123,7 +116,7 @@ public class CharacterSelectorManager : MonoBehaviour
     /// <summary>
     /// Called when image target is found (scanned)
     /// </summary>
-    public void CheckForTargetFound(string charId, string charName, int charAbilityIndex, string charAbility, string charCylinderId, string charRevolverId, string charBackgroundId)
+    public void CheckForTargetFound(string charId, string charName, int charAbilityIndex, string charAbility, List<string> charAbilities, string charCylinderId, string charRevolverId, string charBackgroundId)
     {
         if (selectedCharacter == null) // Assign a target
         {
@@ -135,7 +128,7 @@ public class CharacterSelectorManager : MonoBehaviour
         }
 
         if (charId == selectedCharacter.Id) // Only show the ability
-            OnTargetScanned?.Invoke(selectedCharacter.Ability);
+            OnTargetScanned?.Invoke(selectedCharacter.Ability, charAbilities);
     }
 
     /// <summary>

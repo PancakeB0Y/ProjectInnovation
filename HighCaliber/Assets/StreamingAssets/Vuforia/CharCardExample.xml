@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="mustang-target" size="1.000000 1.400000" />
+    <ImageTarget name="badger-target" size="1.000000 1.400000" />
     <ImageTarget name="gemini-target" size="1.000000 1.400000" />
     <ImageTarget name="viper-target" size="1.000000 1.400000" />
     <ImageTarget name="raven-target" size="1.000000 1.400000" />
