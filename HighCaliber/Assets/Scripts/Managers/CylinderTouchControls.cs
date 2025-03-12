@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class CylinderTouchControls : MonoBehaviour
 {
-    public AudioClip cylinderRotationSound;
-
     [Header("Collision Layers")]
     [SerializeField] LayerMask bulletLayer;
     [SerializeField] LayerMask backgroundLayer;
     [SerializeField] LayerMask chamberLayer;
 
+    [Header("Sounds")]
+    public AudioClip cylinderRotationSound;
+    public AudioClip bulletInSound;
+    public AudioClip bulletOutSound;
+
     [Header("Cylinder Properties")]
     [SerializeField] int startingBulletCount = 0;
     [SerializeField] int chamberCount = 6;
-
 
     AudioSource audioSource;
 
@@ -139,6 +141,11 @@ public class CylinderTouchControls : MonoBehaviour
         //Check if the selected bullet was loaded in a chamber
         if (selectedBullet.IsLoaded())
         {
+            if (audioSource != null)
+            {
+                audioSource.PlayOneShot(bulletOutSound, 0.5f);
+
+            }
             GameManager.instance.DecreaseBulletCount(1);
         }
 
@@ -177,6 +184,11 @@ public class CylinderTouchControls : MonoBehaviour
 
             selectedBullet.transform.position = hitColliders[0].transform.position;
 
+            if (audioSource != null)
+            {
+                audioSource.PlayOneShot(bulletInSound, 0.5f);
+
+            }
             //sets the bullet state
             selectedBullet.LoadBullet(transform);
 

@@ -145,8 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf21ffd82f96b154facb1d634793b7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cylinderRotationSound: {fileID: 8300000, guid: 2f4852ad9d50dd042a9969a6f680a74c,
-    type: 3}
   bulletLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -156,6 +154,10 @@ MonoBehaviour:
   chamberLayer:
     serializedVersion: 2
     m_Bits: 192
+  cylinderRotationSound: {fileID: 8300000, guid: 2f4852ad9d50dd042a9969a6f680a74c,
+    type: 3}
+  bulletInSound: {fileID: 8300000, guid: af9c5edd1d1d01046b99f7beb0719440, type: 3}
+  bulletOutSound: {fileID: 8300000, guid: 67f09e2fee74118408c5f76dc5624b35, type: 3}
   startingBulletCount: 1
   chamberCount: 7
 --- !u!114 &1505716369194692921
