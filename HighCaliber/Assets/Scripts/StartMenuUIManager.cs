@@ -10,6 +10,8 @@ public class StartMenuUIManager : MonoBehaviour
     public static event Action OnNewGameStarted;
     public static event Action<string> OnContinueGame;
 
+    [SerializeField] GameObject RulesPanel;
+
     void Awake()
     {
         if (instance == null)
@@ -39,5 +41,15 @@ public class StartMenuUIManager : MonoBehaviour
         {
             OnContinueGame?.Invoke(fileContent);
         }
+    }
+
+    public void EnableRules()
+    {
+        RulesPanel.SetActive(true);
+    }
+
+    public void DisableRules()
+    {
+        RulesPanel.SetActive(false);
     }
 }
