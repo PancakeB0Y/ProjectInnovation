@@ -86,6 +86,7 @@ public class FileReadWriteManager : MonoBehaviour
             sw.WriteLine(data.Ability);
             sw.WriteLine(data.CylinderId);
             sw.WriteLine(data.RevolverId);
+            sw.WriteLine(data.BackgroundId);
         }
     }
 

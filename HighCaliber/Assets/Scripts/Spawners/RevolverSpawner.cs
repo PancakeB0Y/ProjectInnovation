@@ -12,7 +12,7 @@ public class RevolverSpawner : MonoBehaviour
     void Start()
     {
         GUIDHolder revolver = null;
-        if (CharacterSelectorManager.selectedCharacter.Name == "Lynx")
+        if (CharacterSelectorManager.selectedCharacter.Name == "Viper")
         {
             var revolvers = revolverIds.FindAll(r => r.GUID == CharacterSelectorManager.selectedCharacter.RevolverId);
             revolver = revolvers[CharacterSelectorManager.selectedCharacter.AbilityIndex];
