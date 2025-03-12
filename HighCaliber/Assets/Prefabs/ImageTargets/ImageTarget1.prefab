@@ -99,8 +99,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
+      propertyPath: Name
+      value: Lynx
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
+        type: 3}
       propertyPath: revolverGUID
-      value: 77e41bcb-f26c-4e6e-8a3f-d0141eee0c1d
+      value: ad61fa1b-d636-4aeb-806c-dc8a5c51ee5a
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -111,7 +116,7 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: cyllinderGUID
-      value: 02601a58-c33d-420d-9901-15c1f44f196a
+      value: 83c71b59-fee4-47d5-a654-4b65660b7614
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -127,13 +132,12 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: possibleAbilities.Array.data[0]
-      value: 'After 1st death: can do 2 unique actions per round '
+      value: Your gun has 5 barrel instead of 6.
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: possibleAbilities.Array.data[1]
-      value: 'Gains 2 bonus ammo when shooting a player that has shot you in the
-        previous round '
+      value: Has 7 slots in the barrel. gain an additional bullet when shooting.
       objectReference: {fileID: 0}
     - target: {fileID: 6115182364814712604, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}

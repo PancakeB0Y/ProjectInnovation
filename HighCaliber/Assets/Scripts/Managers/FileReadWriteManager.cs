@@ -81,6 +81,8 @@ public class FileReadWriteManager : MonoBehaviour
         using (StreamWriter sw = new StreamWriter(dataFilePath, false)) // 'false' overwrites
         {
             sw.WriteLine(data.Id);
+            sw.WriteLine(data.Name);
+            sw.WriteLine(data.AbilityIndex);
             sw.WriteLine(data.Ability);
             sw.WriteLine(data.CylinderId);
             sw.WriteLine(data.RevolverId);
