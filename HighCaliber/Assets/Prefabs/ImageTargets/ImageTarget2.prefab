@@ -15,6 +15,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
+      propertyPath: Name
+      value: Badger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
+        type: 3}
       propertyPath: revolverGUID
       value: a3b4f372-1afd-437f-847b-88a86befd2b6
       objectReference: {fileID: 0}

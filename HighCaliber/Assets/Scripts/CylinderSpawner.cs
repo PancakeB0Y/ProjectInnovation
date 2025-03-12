@@ -11,7 +11,17 @@ public class CylinderSpawner : MonoBehaviour
 
     void Start()
     {
-        GUIDHolder cylinder = cylinderIds.FirstOrDefault(c => c.GUID == CharacterSelectorManager.selectedCharacter.CylinderId);
+        GUIDHolder cylinder = null;
+        if (CharacterSelectorManager.selectedCharacter.Name == "Lynx")
+        {
+            var cylinders = cylinderIds.FindAll(c => c.GUID == CharacterSelectorManager.selectedCharacter.CylinderId);
+            cylinder = cylinders[CharacterSelectorManager.selectedCharacter.AbilityIndex];
+        }
+        else
+        {
+            cylinder = cylinderIds.FirstOrDefault(c => c.GUID == CharacterSelectorManager.selectedCharacter.CylinderId);
+        }
+
         if (cylinder == null)
         {
             Debug.LogError("Wrong image target or cylinder GUID!");

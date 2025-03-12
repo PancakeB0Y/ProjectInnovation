@@ -241,9 +241,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cylinderIds:
+  - {fileID: -7803280420650448515, guid: 7957109a62e23674b992d0d86343a857, type: 3}
+  - {fileID: -7803280420650448515, guid: 6f97bd86b58b0dd4d9fd3077218cc8d3, type: 3}
   - {fileID: 1120439591800815949, guid: 203caa1507de87b448e80225d4a0e084, type: 3}
-  - {fileID: -7803280420650448515, guid: 8beba3af144830642b83e5f1390232a9, type: 3}
   - {fileID: 1505716369194692921, guid: c9e4f8ba5adc64541a626f4526bf1c9d, type: 3}
+  - {fileID: -7803280420650448515, guid: b001128809dc3f645a5572dc0d057fcc, type: 3}
+  - {fileID: -7803280420650448515, guid: b1430403d14b7774b93a665a097f6b61, type: 3}
+  - {fileID: -7803280420650448515, guid: 4ff3f6024e81f9e408501948a5355922, type: 3}
 --- !u!1001 &278428951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -569,6 +573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cylinder_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330106850451782679, guid: 8beba3af144830642b83e5f1390232a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6476724866731967545, guid: 8beba3af144830642b83e5f1390232a9,
         type: 3}

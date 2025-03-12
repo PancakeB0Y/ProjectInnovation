@@ -256,6 +256,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60497170}
   m_CullTransparentMesh: 1
+--- !u!1 &178689848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178689850}
+  - component: {fileID: 178689851}
+  m_Layer: 0
+  m_Name: RevolverSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &178689850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178689848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &178689851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178689848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c6ebf7d5214e64aa1cbbdc85a1c8a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revolverIds:
+  - {fileID: -1478682317508014967, guid: 715921d103d526941968b935118e37f0, type: 3}
+  - {fileID: 4209501439817657538, guid: e18fd28025638654b86ae68b516284c3, type: 3}
+  - {fileID: 12804071124701764, guid: 2892cb2e64092d14993caed469ff208d, type: 3}
+  - {fileID: -706021560275113459, guid: 05deb3529cca30543abe7241cceff5ed, type: 3}
+  - {fileID: 7077908981689189210, guid: 9c9559c9c7ad0c3469034ed8307d60b2, type: 3}
+  - {fileID: 7138775345032720836, guid: 80037096bf03afd448d4eea327adc771, type: 3}
+  - {fileID: 6886671666751680753, guid: 45724037b1bf3d24fa6a586c63527518, type: 3}
 --- !u!1 &496042581
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Revolver_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064228567159872759, guid: 2ee9d29fb43ce4846803b2878646d415,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7241402339365710791, guid: 2ee9d29fb43ce4846803b2878646d415,
         type: 3}
@@ -1351,3 +1408,4 @@ SceneRoots:
   - {fileID: 2006693618}
   - {fileID: 785230333}
   - {fileID: 545187548}
+  - {fileID: 178689850}

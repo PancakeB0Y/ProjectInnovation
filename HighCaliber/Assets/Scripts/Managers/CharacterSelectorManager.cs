@@ -8,19 +8,25 @@ using UnityEngine;
 public class SelectedCharacterData
 {
     public string Id => id;
+    public string Name => name;
     public string Ability => ability;
+    public int AbilityIndex => abilityIndex;
     public string CylinderId => cylinderId;
     public string RevolverId => revolverId;
 
     private string id;
+    private string name;
+    private int abilityIndex;
     private string ability;
 
     private string cylinderId;
     private string revolverId;
 
-    public SelectedCharacterData(string id, string ability, string cylinderId, string revolverId)
+    public SelectedCharacterData(string id, string name, int abilityIndex, string ability, string cylinderId, string revolverId)
     {
         this.id = id;
+        this.name = name;
+        this.abilityIndex = abilityIndex;
         this.ability = ability;
 
         this.cylinderId = cylinderId;
@@ -98,11 +104,13 @@ public class CharacterSelectorManager : MonoBehaviour
         using (StringReader reader = new StringReader(charData))
         {
             string charGUID = reader.ReadLine();
+            string charName = reader.ReadLine();
+            int charAbilityIndex = int.Parse(reader.ReadLine());
             string charAbility = reader.ReadLine();
             string charCylinderId = reader.ReadLine();
             string charRevolverId = reader.ReadLine();
 
-            selectedCharacter = new SelectedCharacterData(charGUID, charAbility, charCylinderId, charRevolverId);
+            selectedCharacter = new SelectedCharacterData(charGUID, charName, charAbilityIndex, charAbility, charCylinderId, charRevolverId);
         }
 
         OnCharacterRegistered?.Invoke();
@@ -111,12 +119,12 @@ public class CharacterSelectorManager : MonoBehaviour
     /// <summary>
     /// Called when image target is found (scanned)
     /// </summary>
-    public void CheckForTargetFound(string charId, string charAbility, string charCylinderId, string charRevolverId)
+    public void CheckForTargetFound(string charId, string charName, int charAbilityIndex, string charAbility, string charCylinderId, string charRevolverId)
     {
         if (selectedCharacter == null) // Assign a target
         {
             // Assign to selected character
-            selectedCharacter = new SelectedCharacterData(charId, charAbility, charCylinderId, charRevolverId);
+            selectedCharacter = new SelectedCharacterData(charId, charName, charAbilityIndex, charAbility, charCylinderId, charRevolverId);
 
             // Write to a text file
             OnSelectedCharacter?.Invoke(selectedCharacter);
