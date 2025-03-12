@@ -24,7 +24,7 @@ public class BulletController : MonoBehaviour
         holdRotation = new Vector3(0, -90, 90);
 
         startScale = transform.localScale;
-        holdScale = new Vector3(20f, 20f, 20f);
+        holdScale = new Vector3(21f, 21f, 22f);
 
         bulletCollider = GetComponent<Collider>();
 

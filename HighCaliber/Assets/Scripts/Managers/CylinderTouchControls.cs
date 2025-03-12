@@ -174,8 +174,10 @@ public class CylinderTouchControls : MonoBehaviour
 
         if (hitColliders.Length > 0)
         {
+            Debug.Log(hitColliders.Length);
             for (int i = 0; i < hitColliders.Length; i++)
             {
+                //Compare layerMask to layer
                 if ((bulletLayer & (1 << hitColliders[i].gameObject.layer)) != 0)
                 {
                     return false;
@@ -230,8 +232,8 @@ public class CylinderTouchControls : MonoBehaviour
     {
         while (true)
         {
-            transform.Rotate(60, 0, 0);
-            yield return new WaitForSeconds(0.05f);
+            transform.Rotate(20, 0, 0);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }

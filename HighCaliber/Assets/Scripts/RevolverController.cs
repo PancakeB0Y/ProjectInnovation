@@ -57,7 +57,7 @@ public class RevolverController : MonoBehaviour
         if (CalculateShot())
         {
             audioSource.PlayOneShot(gunShotSound, 0.5f);
-            //Handheld.Vibrate();
+            Handheld.Vibrate();
         }
         else
         {
