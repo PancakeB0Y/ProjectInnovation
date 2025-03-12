@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GoToHomeScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     void OnDestroy()
     {
         StartMenuUIManager.OnNewGameStarted -= GoToNextScene;
