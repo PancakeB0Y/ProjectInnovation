@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Gun_Pink
+  m_Name: M_Gun_Blue
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -40,11 +40,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 77e6e423ebe5f8343b00754b028a6a47, type: 3}
+        m_Texture: {fileID: 2800000, guid: 02eaa60758706e141b3d1566cbf60a5c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: f0d9af8735e7a7549899cc9ea0800f41, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71457c7181f05734da32eb6d627ec538, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -60,15 +60,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 5872b9f9b53dab74a83e492e6bf2ec13, type: 3}
+        m_Texture: {fileID: 2800000, guid: dc7d5617b52c2634195f9aa2df9f07d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 77e6e423ebe5f8343b00754b028a6a47, type: 3}
+        m_Texture: {fileID: 2800000, guid: 02eaa60758706e141b3d1566cbf60a5c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: a354c53c4cc1ba74688b8a231d92edcc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 237ffbc59107a6c4994804f5abb7db96, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
