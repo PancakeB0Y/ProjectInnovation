@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &108929772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1386,6 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityTextCont: {fileID: 1296405140}
+  goToGunBtn: {fileID: 108929772}
   startSpeed: 0.1
   endSpeed: 1.5
   duration: 3.5
