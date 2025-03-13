@@ -85,6 +85,7 @@ public class CharacterSelectorManager : MonoBehaviour
             return; // just to be sure
         }
 
+        StartMenuUIManager.OnNewGameStarted += DeregisterCharacter;
         StartMenuUIManager.OnContinueGame += RegisterCharDataOnContinueGame;
 
         ImageTargetController.OnTargetFound += CheckForTargetFound;
@@ -139,8 +140,14 @@ public class CharacterSelectorManager : MonoBehaviour
         OnTargetLost?.Invoke();
     }
 
+    void DeregisterCharacter()
+    {
+        selectedCharacter = null;
+    }
+
     void OnDestroy()
     {
+        StartMenuUIManager.OnNewGameStarted -= DeregisterCharacter;
         StartMenuUIManager.OnContinueGame -= RegisterCharDataOnContinueGame;
 
         ImageTargetController.OnTargetFound -= CheckForTargetFound;
