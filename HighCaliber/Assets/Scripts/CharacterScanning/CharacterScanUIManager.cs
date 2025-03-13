@@ -17,6 +17,18 @@ public class CharacterScanUIManager : MonoBehaviour
     RectTransform abilityTextCont;
     TextMeshProUGUI abilityTextField;
 
+    [Header("Anim fields")]
+    [SerializeField]
+    float startSpeed = 0.1f;
+    [SerializeField]
+    float endSpeed = 1.5f;
+    [SerializeField]
+    float duration = 2f;
+
+    string chosenAbility;
+    List<string> allAbilities = new List<string>();
+    int counter = 0;
+
     void Awake()
     {
         if (instance == null)
@@ -42,14 +54,43 @@ public class CharacterScanUIManager : MonoBehaviour
         OnGoToCylinderScene?.Invoke();
     }
 
-    void DisplayAbilityCont(string abilityText)
+    void DisplayAbilityCont(string abilityText, List<string> abilitiesText)
     {
         if (abilityTextField.text == "") // Only the first time the chosen character is scanned
         {
-            abilityTextField.text = abilityText;
+            chosenAbility = abilityText;
+            allAbilities = abilitiesText;
+
+            // TODO: Play animation
+            StartCoroutine(AbilityAnimCoroutine());
         }
 
         abilityTextCont.gameObject.SetActive(true);
+    }
+
+    IEnumerator AbilityAnimCoroutine()
+    {
+        float elapsedTime = 0f;
+        float toggleSpeed = startSpeed;
+
+        while (elapsedTime < duration)
+        {
+            // Toggle text
+            abilityTextField.text = allAbilities[counter];
+
+            counter++;
+            if (counter >= allAbilities.Count)
+                counter = 0;
+
+            yield return new WaitForSeconds(toggleSpeed); // Wait before switching again
+
+            // Gradually increase the delay (slowing down effect)
+            toggleSpeed = Mathf.Lerp(startSpeed, endSpeed, elapsedTime / duration);
+            elapsedTime += toggleSpeed;
+        }
+
+        // Ensure final state (chosen ability)
+        abilityTextField.text = chosenAbility;
     }
 
     void HideAbilityCont()

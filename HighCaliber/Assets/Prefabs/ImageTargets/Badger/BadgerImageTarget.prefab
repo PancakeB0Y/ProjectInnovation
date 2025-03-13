@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: Id
-      value: 9fd31d67-f83e-475f-9ef1-80f640a0a35f
+      value: bc06a3f6-e2e1-45eb-b80c-018e82ce2d21
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: revolverGUID
-      value: a3b4f372-1afd-437f-847b-88a86befd2b6
+      value: 64cafd36-ad54-4cd3-98fd-e2d0ea23ef8f
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -32,7 +32,7 @@ PrefabInstance:
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: cyllinderGUID
-      value: 08090227-fdc0-4237-a6c5-ed009e33acdd
+      value: 180259fa-5ea5-43e9-bacd-6c5fe4462aba
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -42,38 +42,49 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
+      propertyPath: backgroundGUID
+      value: 3d696692-d746-47ae-8b08-39a1d0134e84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
+        type: 3}
       propertyPath: possibleAbilities.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: possibleAbilities.Array.data[0]
-      value: Starts with 3 lives.
+      value: After losing the 1st life token, can take 2 actions per turn.
       objectReference: {fileID: 0}
     - target: {fileID: 5614307025019729097, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: possibleAbilities.Array.data[1]
-      value: 'Taking a life gives you 2 bullets. '
+      value: Gains 2 bonus bullets when shooting a player who attempted to shoot
+        you in the previous round.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182364814712604, guid: e0e95178487b9e245ae9629987e8a66d,
+        type: 3}
+      propertyPath: mTargetName
+      value: gemini-target
       objectReference: {fileID: 0}
     - target: {fileID: 6645469027888967816, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: m_Name
-      value: ImageTarget2
+      value: BadgerImageTarget
       objectReference: {fileID: 0}
     - target: {fileID: 7176304615576378636, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: mHeight
-      value: 1.332957
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 7176304615576378636, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: mAspectRatio
-      value: 1.332957
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 7176304615576378636, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       propertyPath: mTrackableName
-      value: char-2-target
+      value: badger-target
       objectReference: {fileID: 0}
     - target: {fileID: 8730530326917378246, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
@@ -132,7 +143,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8730530326917378246, guid: e0e95178487b9e245ae9629987e8a66d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3763239213141237398}
+      addedObject: {fileID: 2602049683140233404}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e95178487b9e245ae9629987e8a66d, type: 3}
 --- !u!4 &2227694610373923615 stripped
@@ -141,7 +152,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7476907091035988953}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7827118817108155728
+--- !u!1001 &9136490561403678657
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -149,69 +160,74 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2227694610373923615}
     m_Modifications:
-    - target: {fileID: 3868494384688408993, guid: 32495728719782647aa3d9b233fecfb0,
-        type: 3}
-      propertyPath: m_Name
-      value: char-2-ar
-      objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+    - target: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811000106636006621, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Badger-ar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811000106636006621, guid: 21bc1e46e046ee04bafd71362b29c3d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 32495728719782647aa3d9b233fecfb0, type: 3}
---- !u!4 &3763239213141237398 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 21bc1e46e046ee04bafd71362b29c3d6, type: 3}
+--- !u!4 &2602049683140233404 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6387851636586005446, guid: 32495728719782647aa3d9b233fecfb0,
+  m_CorrespondingSourceObject: {fileID: 6545704589223602045, guid: 21bc1e46e046ee04bafd71362b29c3d6,
     type: 3}
-  m_PrefabInstance: {fileID: 7827118817108155728}
+  m_PrefabInstance: {fileID: 9136490561403678657}
   m_PrefabAsset: {fileID: 0}

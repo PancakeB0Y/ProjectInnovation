@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class SelectedCharacterData
     public int AbilityIndex => abilityIndex;
     public string CylinderId => cylinderId;
     public string RevolverId => revolverId;
+    public string BackgroundId => backgroundId;
 
     private string id;
     private string name;
@@ -21,8 +23,9 @@ public class SelectedCharacterData
 
     private string cylinderId;
     private string revolverId;
+    private string backgroundId;
 
-    public SelectedCharacterData(string id, string name, int abilityIndex, string ability, string cylinderId, string revolverId)
+    public SelectedCharacterData(string id, string name, int abilityIndex, string ability, string cylinderId, string revolverId, string backgroundId)
     {
         this.id = id;
         this.name = name;
@@ -31,6 +34,7 @@ public class SelectedCharacterData
 
         this.cylinderId = cylinderId;
         this.revolverId = revolverId;
+        this.backgroundId = backgroundId;
     }
 }
 
@@ -56,7 +60,7 @@ public class CharacterSelectorManager : MonoBehaviour
     /// <summary>
     /// When an image target is found (scanned) - display character UI
     /// </summary>
-    public static event Action<string> OnTargetScanned;
+    public static event Action<string, List<string>> OnTargetScanned;
 
     /// <summary>
     /// When an image target is lost - hide character UI
@@ -67,14 +71,6 @@ public class CharacterSelectorManager : MonoBehaviour
     /// Holds the chosen character data throughout the whole game lifecycle
     /// </summary>
     public static SelectedCharacterData selectedCharacter = null;
-
-    [Header("Revolvers")]
-    [SerializeField]
-    private GameObject revolver5;
-    [SerializeField]
-    private GameObject revolver6;
-    [SerializeField]
-    private GameObject revolver7;
 
     void Awake()
     {
@@ -109,8 +105,9 @@ public class CharacterSelectorManager : MonoBehaviour
             string charAbility = reader.ReadLine();
             string charCylinderId = reader.ReadLine();
             string charRevolverId = reader.ReadLine();
+            string charBackgroundId = reader.ReadLine();
 
-            selectedCharacter = new SelectedCharacterData(charGUID, charName, charAbilityIndex, charAbility, charCylinderId, charRevolverId);
+            selectedCharacter = new SelectedCharacterData(charGUID, charName, charAbilityIndex, charAbility, charCylinderId, charRevolverId, charBackgroundId);
         }
 
         OnCharacterRegistered?.Invoke();
@@ -119,19 +116,19 @@ public class CharacterSelectorManager : MonoBehaviour
     /// <summary>
     /// Called when image target is found (scanned)
     /// </summary>
-    public void CheckForTargetFound(string charId, string charName, int charAbilityIndex, string charAbility, string charCylinderId, string charRevolverId)
+    public void CheckForTargetFound(string charId, string charName, int charAbilityIndex, string charAbility, List<string> charAbilities, string charCylinderId, string charRevolverId, string charBackgroundId)
     {
         if (selectedCharacter == null) // Assign a target
         {
             // Assign to selected character
-            selectedCharacter = new SelectedCharacterData(charId, charName, charAbilityIndex, charAbility, charCylinderId, charRevolverId);
+            selectedCharacter = new SelectedCharacterData(charId, charName, charAbilityIndex, charAbility, charCylinderId, charRevolverId, charBackgroundId);
 
             // Write to a text file
             OnSelectedCharacter?.Invoke(selectedCharacter);
         }
 
         if (charId == selectedCharacter.Id) // Only show the ability
-            OnTargetScanned?.Invoke(selectedCharacter.Ability);
+            OnTargetScanned?.Invoke(selectedCharacter.Ability, charAbilities);
     }
 
     /// <summary>
