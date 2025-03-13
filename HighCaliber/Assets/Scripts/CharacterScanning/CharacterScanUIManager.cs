@@ -16,6 +16,8 @@ public class CharacterScanUIManager : MonoBehaviour
     [SerializeField]
     RectTransform abilityTextCont;
     TextMeshProUGUI abilityTextField;
+    [SerializeField]
+    RectTransform goToGunBtn;
 
     [Header("Anim fields")]
     [SerializeField]
@@ -61,8 +63,9 @@ public class CharacterScanUIManager : MonoBehaviour
             chosenAbility = abilityText;
             allAbilities = abilitiesText;
 
-            // TODO: Play animation
             StartCoroutine(AbilityAnimCoroutine());
+
+            goToGunBtn.gameObject.SetActive(true);
         }
 
         abilityTextCont.gameObject.SetActive(true);
